@@ -6,7 +6,7 @@ const authenticateToken = require("../middleware/authMiddleware");
 const userModel = require("../models/userModel");
 const bcrypt = require('bcrypt');
 
-router.get("/login", async (req, res) => {
+router.post("/login", async (req, res) => {
 	try {
 		const loginData = req.body;
 		if (!loginData.username || !loginData.password) {

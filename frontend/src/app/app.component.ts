@@ -1,26 +1,20 @@
 import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterModule, RouterOutlet } from '@angular/router';
+import { AuthService } from './services/auth-service.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterModule, HttpClientModule],
+  imports: [RouterOutlet, RouterModule, HttpClientModule, FormsModule],
   template:`
-    <div class="px-6 py-4 w-full bg-gray-900 flex gap-6 text-white">
-        <a class="" routerLink="/">Home</a>
-        <a class="" routerLink="/casier">Casiers</a>
-        <a class="" routerLink="/rapport">Rapports</a>
-        <a class="" routerLink="/plainte">Plaintes</a>
-        <a class="" routerLink="/amendes">Amendes</a>
-        <a class="" routerLink="/groupes">Groupes</a>
-        <a class="" routerLink="/enquête">Enquête</a>
-        <a class="" routerLink="/profil">Profil</a>
-    </div>
-      <router-outlet />
+    <router-outlet />
     `,
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'dashboard_panel';
+
+  constructor(private authService: AuthService) {}
 }

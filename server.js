@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors');
 const userRoutes = require("./src/routes/userRoutes");
 const serviceRoutes = require("./src/routes/serviceRoutes");
 const sectorRoutes = require("./src/routes/sectorRoutes");
@@ -7,6 +8,7 @@ const client = require("./src/config/database");
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 client.connect((err) => {
     if (err) {

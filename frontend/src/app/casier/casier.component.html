@@ -1,19 +1,26 @@
+<app-navbar></app-navbar>
 <div class="container mx-auto pt-3">
     <h1 class="text-center text-3xl font-bold my-4">Casier Judiciaire</h1>
     <div class="flex justify-end">
         <button routerLink="/add-casier" class="bg-gray-900 text-white px-4 py-2 rounded-md mb-4 shadow-md">Ajouter un
             casier</button>
     </div>
-    <table class="w-full border-collapse border border-gray-400">
+    <table class="w-full">
         <thead>
-            <tr class="text-center">
+            <tr class="text-center border-collapse border border-gray-400">
                 <th class="px-2 py-2 border-r border-gray-400">N°</th>
                 <th class="px-4 py-2 border-r border-gray-400">Nom</th>
                 <th class="px-4 py-2 border-r border-gray-400">Prénom</th>
                 <th class="px-2 py-2">Action</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody >
+            <tr *ngFor="let casier of casiers" class="text-center border-collapse border border-gray-400">
+                <td class="px-2 py-2 border-r border-gray-400">{{ casier.badger_cases }}</td>
+                <td class="px-4 py-2 border-r border-gray-400">{{ casier.first_name }}</td>
+                <td class="px-4 py-2 border-r border-gray-400">{{ casier.last_name }}</td>
+                <td class="px-2 py-2"><button routerLink="/casier/:id" class="bg-gray-900 text-white px-4 py-2 rounded-md shadow-md">Voir</button></td>
+            </tr>
         </tbody>
     </table>
 </div>
